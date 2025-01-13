@@ -25,6 +25,8 @@ target 'RnVkAuthExample' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'VKID', '~> 2.3'
+
   target 'RnVkAuthExampleTests' do
     inherit! :complete
     # Pods for testing

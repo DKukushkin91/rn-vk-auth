@@ -1,5 +1,6 @@
 {
   "name": "rn-vk-auth",
+  "packageManager": "yarn@4.6.0",
   "version": "0.1.0",
   "description": "auth vk",
   "source": "./src/index.tsx",
@@ -95,7 +96,6 @@
   "workspaces": [
     "example"
   ],
-  "packageManager": "yarn@3.6.1",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -183,7 +183,7 @@
     ]
   },
   "codegenConfig": {
-    "name": "RNRnVkAuthSpec",
+    "name": "RnVkAuthSpec",
     "type": "modules",
     "jsSrcsDir": "src",
     "outputDir": {
