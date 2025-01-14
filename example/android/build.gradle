@@ -18,4 +18,14 @@ buildscript {
     }
 }
 
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    maven {
+      url = uri("https://artifactory-external.vkpartner.ru/artifactory/vkid-sdk-andorid/")
+    }
+  }
+}
+
 apply plugin: "com.facebook.react.rootproject"

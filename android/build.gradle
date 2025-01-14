@@ -64,7 +64,6 @@ android {
     minSdkVersion getExtOrIntegerDefault("minSdkVersion")
     targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
     buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
-
   }
 
   buildFeatures {
@@ -104,6 +103,7 @@ repositories {
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
+def vkSdkVersion = "2.2.2"
 
 dependencies {
   // For < 0.71, this will be from the local maven repo
@@ -111,6 +111,9 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation "com.vk.id:vkid:${vkSdkVersion}"
+  implementation "com.vk.id:onetap-xml:${vkSdkVersion}"
+
 }
 
 if (isNewArchitectureEnabled()) {
@@ -118,5 +121,15 @@ if (isNewArchitectureEnabled()) {
     jsRootDir = file("../src/")
     libraryName = "RnVkAuth"
     codegenJavaPackageName = "com.rnvkauth"
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    maven {
+      url = uri("https://artifactory-external.vkpartner.ru/artifactory/vkid-sdk-andorid/")
+    }
   }
 }

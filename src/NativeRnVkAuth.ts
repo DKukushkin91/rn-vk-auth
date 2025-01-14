@@ -2,9 +2,9 @@ import type { TurboModule } from 'react-native';
 import { TurboModuleRegistry } from 'react-native';
 
 interface IInitializeParams {
-  clientId: string;
-  clientSecret: string;
   loggingEnabled: boolean;
+  clientId?: string;
+  clientSecret?: string;
 }
 
 interface IInitializeResult {

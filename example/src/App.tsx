@@ -8,7 +8,10 @@ export default function App() {
     deviceId: string;
     redirectURI: string;
   }) => {
-    const response = await fetch('api-url', { method: 'GET' });
+    const response = await fetch(
+      'https://api-beta.dapognali.ru/v1/vk/redirect',
+      { method: 'GET' }
+    );
     const responseJson = await response.json();
 
     console.log('Отправка бэку', data);
@@ -20,18 +23,25 @@ export default function App() {
   const handlePress = async () => {
     try {
       const vkid = await RnVkAuth.initialize({
-        clientId: 'client-id',
-        clientSecret: 'clientSecret',
+        clientId: '51863908',
+        clientSecret: 'kWtTGlS0uBtslfwHDCCv',
         loggingEnabled: __DEV__,
       });
 
-      if (vkid.success) {
+      if (vkid) {
         const bottomSheet = await RnVkAuth.toggleOneTapBottomSheet(
           {
             serviceName: 'Имя сервиса',
             cornerRadius: 8,
             autoDismissOnSuccess: true,
-            scope: ['first_name, phone, avatar, email, sex, birthday'],
+            scope: [
+              'first_name',
+              'phone',
+              'avatar',
+              'email',
+              'sex',
+              'birthday',
+            ],
           },
           fetchApi
         );

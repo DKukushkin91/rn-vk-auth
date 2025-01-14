@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vk.id.onetap.xml.OneTapBottomSheet
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/vkid_bottom_sheet"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  app:vkid_bottomSheetServiceName="Not so cool xml app"
+  app:vkid_autoHideOnSuccess="false"
+  app:vkid_onetapScopes="vkid.personal_info"
+  app:vkid_serviceName="asd"
+/>
